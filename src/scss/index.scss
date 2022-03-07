@@ -1,0 +1,120 @@
+@use "sass:math";
+
+// 변수의 사용 가능
+$color: #fff;
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $color;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// nesting
+@mixin nesting($size) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: #{$size}px;
+  height: #{$size}px;
+}
+
+.nesting1 {
+  @include nesting(400);
+  background-color: green;
+
+  .nesting2 {
+    @include nesting(300);
+    background-color: blue;
+
+    .nesting3 {
+      @include nesting(200);
+      background-color: red;
+
+      .nesting4 {
+        @include nesting(100);
+        background-color: yellow;
+      }
+    }
+  }
+}
+
+// mixin
+@mixin BGcolor($color) {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: $color;
+}
+
+.blue-bg {
+  @include BGcolor(blue);
+}
+
+.red-bg {
+  @include BGcolor(red);
+}
+
+// 배열 사용가능
+$paddings: 0, 5, 10, 15, 20, 30, 40, 50;
+
+// each를 이용해 배열의 값을 순회하며 style을 생성할 수 있습니다.
+@each $padding in $paddings {
+  .pt-#{$padding} {
+    border: 1px solid lightblue;
+    padding-top: #{$padding}px;
+  }
+}
+
+// If Else 문
+@mixin avatar($size, $circle: false) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background-color: skyblue;
+
+  @if $circle {
+    border-radius: calc($size / 2);
+  }
+}
+
+.square-av {
+  @include avatar(100px, $circle: false);
+}
+.circle-av {
+  @include avatar(100px, $circle: true);
+}
+
+// For 문
+$base-color: #036;
+
+
+@for $i from 1 through 3 {
+  li:nth-child(3n + #{$i}) {
+    background-color: lighten($base-color, $i * 10%);
+  }
+}
+
+// While 문
+@function scale-below($value, $base, $ratio: 1.618) {
+  @while $value > $base {
+    // $value: math.div($value, $ratio);
+    $value: calc($value / $ratio);
+  }
+  @return $value;
+}
+
+$normal-font-size: 16px;
+sup {
+  font-size: scale-below(30px, $normal-font-size);
+}

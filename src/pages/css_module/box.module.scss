@@ -1,0 +1,12 @@
+.box {
+  background-color: pink;
+}
+
+$sizes: 100, 200, 300, 400;
+
+@each $size in $sizes {
+  .box_#{$size} {
+    width: #{$size}px;
+    height: #{$size}px;
+  }
+}

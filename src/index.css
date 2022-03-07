@@ -1,0 +1,134 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nesting1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: green;
+}
+.nesting1 .nesting2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+}
+.nesting1 .nesting2 .nesting3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+.nesting1 .nesting2 .nesting3 .nesting4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+.blue-bg {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.red-bg {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.pt-0 {
+  border: 1px solid lightblue;
+  padding-top: 0px;
+}
+
+.pt-5 {
+  border: 1px solid lightblue;
+  padding-top: 5px;
+}
+
+.pt-10 {
+  border: 1px solid lightblue;
+  padding-top: 10px;
+}
+
+.pt-15 {
+  border: 1px solid lightblue;
+  padding-top: 15px;
+}
+
+.pt-20 {
+  border: 1px solid lightblue;
+  padding-top: 20px;
+}
+
+.pt-30 {
+  border: 1px solid lightblue;
+  padding-top: 30px;
+}
+
+.pt-40 {
+  border: 1px solid lightblue;
+  padding-top: 40px;
+}
+
+.pt-50 {
+  border: 1px solid lightblue;
+  padding-top: 50px;
+}
+
+.square-av {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+}
+
+.circle-av {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  border-radius: 50px;
+}
+
+li:nth-child(3n+1) {
+  background-color: #004d99;
+}
+
+li:nth-child(3n+2) {
+  background-color: #0066cc;
+}
+
+li:nth-child(3n+3) {
+  background-color: #0080ff;
+}
+
+sup {
+  font-size: 11.459461772px;
+}
